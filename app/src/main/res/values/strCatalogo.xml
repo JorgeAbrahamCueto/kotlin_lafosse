@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "strCatalogo">
+        <item>Seleccione un producto</item>
+        <item>Silla Ejecutiva  ---- 350</item>
+        <item>Silla Gerencial ---- 1200</item>
+        <item>Escritorio Ejecutivo ---- 1800</item>
+        <item>Mesa de Reuniones ---- 450</item>
+        <item>Módulo de Recepción ---- 600</item>
+        <item>Butaca para Auditorio ---- 250</item>
+        <item>Archivador Metálico ---- 1500</item>
+    </string-array>
+</resources>
