@@ -1,37 +1,80 @@
 package com.example.examen_parcial
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
 import android.view.MenuItem
-import com.example.examen_parcial.databinding.ActivityMainBinding
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationView
 import android.content.Intent
-import android.widget.Button
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(),
+    NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val catalogo = findViewById<Button>(R.id.btnCatalogo)
-        val contacto = findViewById<Button>(R.id.btnContacto)
 
-        catalogo.setOnClickListener {
-            val ventana = Intent(this, CatalogoActivity::class.java)
-            startActivity(ventana)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val drawerLayout =
+            findViewById<androidx.drawerlayout.widget.DrawerLayout>(R.id.drawerLayout)
+
+        val navView =
+            findViewById<com.google.android.material.navigation.NavigationView>(R.id.navView)
+
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.app_name,
+            R.string.app_name
+        )
+
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        navView.setNavigationItemSelectedListener(this)
+
+        replaceFragment(HomeFragment())
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+
+            R.id.nav_home -> {
+                replaceFragment(HomeFragment())
+            }
+
+            R.id.nav_nosotros -> {
+                replaceFragment(NosotrosFragment())
+            }
+
+            R.id.nav_login -> {
+                replaceFragment(LoginFragment())
+            }
+
+            R.id.nav_contacto -> {
+                val ventana = Intent(this, ContactoActivity::class.java)
+                startActivity(ventana)
+            }
+
         }
 
-        contacto.setOnClickListener {
-            val ventana = Intent(this, ContactoActivity::class.java)
-            startActivity(ventana)
-        }
+        val drawerLayout =
+            findViewById<androidx.drawerlayout.widget.DrawerLayout>(R.id.drawerLayout)
+
+        drawerLayout.closeDrawer(GravityCompat.START)
+
+        return true
     }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
+}
