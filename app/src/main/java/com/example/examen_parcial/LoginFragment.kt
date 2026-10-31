@@ -39,14 +39,27 @@ class LoginFragment : Fragment() {
                     "Bienvenido Administrador",
                     Toast.LENGTH_SHORT
                 ).show()
+                val drawerLayout =
+                    requireActivity().findViewById<androidx.drawerlayout.widget.DrawerLayout>(
+                        R.id.drawerLayout
+                    )
 
-            } else {
+                drawerLayout.setDrawerLockMode(
+                    androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_UNLOCKED
+                )
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, HomeFragment())
+                    .commit()
+
+            }
+            else {
 
                 Toast.makeText(
                     requireContext(),
                     "Usuario o contraseña incorrectos",
                     Toast.LENGTH_SHORT
                 ).show()
+
 
             }
         }

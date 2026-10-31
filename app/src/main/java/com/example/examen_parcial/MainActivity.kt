@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity(),
 
         val drawerLayout =
             findViewById<androidx.drawerlayout.widget.DrawerLayout>(R.id.drawerLayout)
+        drawerLayout.setDrawerLockMode(
+            androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_LOCKED_CLOSED
+        )
 
         val navView =
             findViewById<com.google.android.material.navigation.NavigationView>(R.id.navView)
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity(),
 
         navView.setNavigationItemSelectedListener(this)
 
-        replaceFragment(HomeFragment())
+        replaceFragment(LoginFragment())
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
