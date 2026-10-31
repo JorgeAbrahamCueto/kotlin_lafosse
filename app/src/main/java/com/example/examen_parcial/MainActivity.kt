@@ -57,6 +57,16 @@ class MainActivity : AppCompatActivity(),
             }
 
             R.id.nav_login -> {
+
+                val drawerLayout =
+                    findViewById<androidx.drawerlayout.widget.DrawerLayout>(
+                        R.id.drawerLayout
+                    )
+
+                drawerLayout.setDrawerLockMode(
+                    androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_LOCKED_CLOSED
+                )
+
                 replaceFragment(LoginFragment())
             }
 
