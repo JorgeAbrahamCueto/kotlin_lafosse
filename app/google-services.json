@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1054175979912",
+    "project_id": "lafosse-forniture",
+    "storage_bucket": "lafosse-forniture.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054175979912:android:1e6a6a54168ebb538bb23d",
+        "android_client_info": {
+          "package_name": "com.example.examen_parcial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054175979912-e73oupehdrrk2leo5lf6r7vsugorc56d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.examen_parcial",
+            "certificate_hash": "d6deea3515e17ba6fd1600602ae6ff2deeb2777c"
+          }
+        },
+        {
+          "client_id": "1054175979912-t5a4hgrvd2ci1tshp7via1251mh4j506.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1DCylI4B-VeX-q8w4_u9oEHvCPYxPWtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054175979912-t5a4hgrvd2ci1tshp7via1251mh4j506.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

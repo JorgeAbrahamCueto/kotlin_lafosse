@@ -1,68 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/blue_lafosse"
-    tools:context=".SplashActivity">
+    android:background="@drawable/bg_splash_gradient"
+    android:padding="32dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:text="Bienvenido" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Somos un grupo de profesionales con mas de 10 años de experiencia en
-el mercado de diseño, fabricacion, comercializacion e instalacion de proyectos inmobiliarios." />
-
+    <!-- Contenedor central animado -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/contenedorSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/progressSplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:max="100"
-            android:progress="0"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <!-- Tarjeta elegante para el logo -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="12dp"
+            app:strokeColor="#3B82F6"
+            app:strokeWidth="2dp">
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
+                android:id="@+id/imgLogoSplash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/designer" />
-        </LinearLayout>
+                android:src="@drawable/logo"
+                android:contentDescription="Logo Lafosse Furniture" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Nombre de la empresa (28sp según requisito) -->
+        <TextView
+            android:id="@+id/tvNombreEmpresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.06"
+            android:text="LAFOSSE FURNITURE"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- Línea decorativa -->
+        <View
+            android:layout_width="64dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#60A5FA" />
+
+        <!-- Subtítulo / Eslogan -->
+        <TextView
+            android:id="@+id/tvEslogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diseño y elegancia para tu espacio"
+            android:textAlignment="center"
+            android:textColor="#DBEAFE"
+            android:textSize="16sp" />
     </LinearLayout>
-</LinearLayout>
+
+    <!-- Barra de progreso moderna de 5 segundos -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressSplash"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:max="100"
+        android:progress="0"
+        app:indicatorColor="#60A5FA"
+        app:layout_constraintBottom_toTopOf="@id/tvCargando"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:trackColor="#33FFFFFF"
+        app:trackCornerRadius="8dp"
+        app:trackThickness="6dp" />
+
+    <TextView
+        android:id="@+id/tvCargando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Cargando aplicación..."
+        android:textColor="#93C5FD"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
