@@ -1,25 +1,26 @@
 # 🪑 Lafosse Furniture
 
-Aplicación móvil desarrollada en **Kotlin** para Android como proyecto de Evaluación Parcial.
+Aplicación móvil desarrollada en **Kotlin** para Android como proyecto de **Evaluación Final**.
 
-La aplicación representa a la empresa **Lafosse Furniture**, especializada en la comercialización de mobiliario corporativo, educativo y empresarial.
+La aplicación representa a la empresa **Lafosse Furniture**, especializada en la comercialización de mobiliario corporativo, educativo y empresarial, integrando servicios en la nube con **Firebase** y geolocalización con **Google Maps API**.
 
 ---
 
 # 📱 Características
 
-- Splash Screen con barra de progreso de 5 segundos.
-- Inicio de sesión.
-- Navigation Drawer.
-- Presentación de la empresa.
-- Formulario de contacto.
-- Catálogo de productos.
-- Sistema de cotización.
-- Cálculo de descuentos.
-- Cálculo de servicios adicionales.
-- Resultado detallado de la cotización.
-- Cierre de sesión.
-- Diseño bloqueado en orientación vertical.
+- Splash Screen animado con barra de progreso de 5 segundos y verificación automática de sesión.
+- Inicio de sesión con **Correo/Contraseña** y **Google Sign-In** (Firebase Authentication).
+- Registro de nuevos usuarios con almacenamiento de perfil en **Cloud Firestore**.
+- Sesión persistente (mantiene la sesión iniciada al cerrar y reabrir la aplicación).
+- Navigation Drawer con Fragments y Activities.
+- Presentación de la empresa (Inicio y Nosotros) con tipografía estandarizada (Título `28sp`, Párrafo `24sp`, Interlineado `30sp`).
+- Mapa interactivo de ubicación de la empresa con **Google Maps API**.
+- Formulario de contacto conectado a **Cloud Firestore** (`contactos`) con retorno directo al Inicio.
+- Catálogo de productos con **cotizador multiproduto** (permite agregar varios muebles en una sola cotización).
+- Cálculo de servicios adicionales, descuentos (`SeekBar`) y calificación (`RatingBar`).
+- Resultado detallado de la cotización y guardado automático en **Cloud Firestore** (`cotizaciones`).
+- Botón de cierre de sesión en el Navigation Drawer (cierra Firebase y Google limpiando el historial).
+- Ícono de aplicación personalizado y diseño bloqueado en orientación vertical (`portrait`).
 
 ---
 
@@ -29,227 +30,30 @@ La aplicación representa a la empresa **Lafosse Furniture**, especializada en l
 - Android Studio
 - Android SDK
 - Material Design
-- Fragments
-- Activities
+- Fragments y Activities
 - Navigation Drawer
+- Firebase Authentication (Correo/Contraseña y Google Sign-In)
+- Cloud Firestore
+- Google Maps SDK for Android
 
 ---
 
 # 📂 Arquitectura General
 
 ```text
-SplashActivity
+SplashActivity (5s + verificación de sesión)
       ↓
-LoginFragment
+LoginActivity  ⟷  RegistroActivity
       ↓
-HomeFragment
-      ↓
-Navigation Drawer
+MainActivity (Navigation Drawer)
 
-├── Inicio
-├── Nosotros
-├── Contactos
-└── Cerrar Sesión
+├── Inicio       → HomeFragment
+├── Nosotros     → NosotrosFragment
+├── Ubícanos     → MapaFragment (Google Maps API)
+├── Contáctanos  → ContactoActivity (Firestore: contactos)
+└── Cerrar Sesión → LoginActivity
 
-      ↓
-CatalogoActivity
+      ↓ (desde Inicio)
+CatalogoActivity (Cotizador multiproduto + Firestore: cotizaciones)
       ↓
 ResultadoActivity
-```
-
----
-
-# ✅ Requisitos
-
-- Android Studio Hedgehog o superior.
-- JDK 17 o superior.
-- Gradle.
-- Emulador Android o dispositivo físico.
-
----
-
-# ⚙️ Instalación
-
-## 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/JorgeAbrahamCueto/kotlin_lafosse.git
-```
-
-## 2. Abrir el proyecto
-
-Abrir Android Studio y seleccionar:
-
-```text
-Open Project
-```
-
-Seleccionar la carpeta:
-
-```text
-kotlin_lafosse
-```
-
-## 3. Sincronizar Gradle
-
-Esperar que Android Studio descargue las dependencias necesarias.
-
-## 4. Ejecutar
-
-Pulsar:
-
-```text
-Run ▶
-```
-
-o
-
-```text
-Shift + F10
-```
-
----
-
-# 🔑 Credenciales de Acceso
-
-Usuario:
-
-```text
-admin
-```
-
-Contraseña:
-
-```text
-123
-```
-
----
-
-# 🧪 Flujo de Prueba
-
-## Login Incorrecto
-
-Ingresar:
-
-```text
-Usuario: admin
-Contraseña: 000
-```
-
-Resultado esperado:
-
-```text
-Usuario o contraseña incorrectos
-```
-
----
-
-## Login Correcto
-
-Ingresar:
-
-```text
-Usuario: admin
-Contraseña: 123
-```
-
-Resultado esperado:
-
-```text
-Bienvenido Administrador
-```
-
----
-
-## Navegación
-
-Verificar acceso a:
-
-- Inicio
-- Nosotros
-- Contactos
-- Cerrar Sesión
-
----
-
-## Contactos
-
-Completar:
-
-- Nombre
-- Correo
-- Teléfono
-- Mensaje
-
-Resultado esperado:
-
-```text
-Mensaje enviado
-```
-
----
-
-## Cotización
-
-Seleccionar:
-
-- Producto
-- Cantidad
-- Servicios adicionales
-- Descuento
-
-Resultado esperado:
-
-- Precio unitario.
-- Subtotal.
-- Adicionales.
-- Descuento.
-- Total final.
-
----
-
-# 📊 Fórmula de Cotización
-
-```text
-Subtotal = Precio × Cantidad
-```
-
-```text
-Subtotal con Adicionales =
-Subtotal + Transporte + Instalación + Garantía
-```
-
-```text
-Monto de Descuento =
-Subtotal con Adicionales × % Descuento
-```
-
-```text
-Total Final =
-Subtotal con Adicionales - Monto Descuento
-```
-
----
-
-# 📸 Capturas
-
-Agregar las siguientes capturas:
-
-- Splash Screen
-- Login
-- Inicio
-- Nosotros
-- Contactos
-- Catálogo
-- Resultado de Cotización
-
----
-
-# 👨‍💻 Autor
-
-Jorge Abraham Cueto Elias
-
-Ricky Estrella Pacho
-
-Proyecto desarrollado para el curso de Programación Móvil.
