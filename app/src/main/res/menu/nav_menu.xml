@@ -12,6 +12,11 @@
         android:title="Nosotros" />
 
     <item
+        android:id="@+id/nav_muebles"
+        android:icon="@drawable/ic_home"
+        android:title="Muebles" />
+
+    <item
         android:id="@+id/nav_contacto"
         android:icon="@drawable/ic_contacto"
         android:title="Contactanos" />
@@ -25,5 +30,7 @@
         android:id="@+id/nav_login"
         android:icon="@drawable/ic_cerrarsesion"
         android:title="Cerrar Sesión" />
+
+
 
 </menu>

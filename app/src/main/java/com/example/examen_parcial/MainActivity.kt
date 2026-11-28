@@ -92,6 +92,11 @@ class MainActivity : AppCompatActivity(),
                 replaceFragment(NosotrosFragment())
             }
 
+            R.id.nav_muebles -> {
+                replaceFragment(MueblesFragment())
+            }
+
+
             R.id.nav_contacto -> {
                 val ventana = Intent(this, ContactoActivity::class.java)
                 startActivity(ventana)
