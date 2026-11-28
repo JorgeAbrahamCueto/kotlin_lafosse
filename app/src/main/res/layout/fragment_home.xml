@@ -22,7 +22,7 @@
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="24dp"
             app:cardElevation="10dp"
-            app:strokeColor="#60A5FA"
+            app:strokeColor="#93C5FD"
             app:strokeWidth="2dp">
 
             <ImageView
@@ -38,31 +38,40 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:text="Lafosse Furniture"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!-- Tarjeta blanca con presentación (Párrafo 24sp, Interlineado 30sp) -->
+        <!-- Línea decorativa celeste -->
+        <View
+            android:layout_width="72dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="#60A5FA" />
+
+        <!-- Tarjeta moderna con degradado (Párrafo 24sp, Interlineado 30sp) -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="8dp">
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_modern"
                 android:orientation="vertical"
                 android:padding="22dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="22dp"
                     android:lineHeight="30sp"
                     android:text="Ofrecemos una amplia variedad de muebles de alta calidad a precios competitivos. Encuentra soluciones modernas e innovadoras para oficinas, aulas, auditorios y espacios corporativos, diseñadas para brindar comodidad, funcionalidad y estilo."
                     android:textAlignment="center"
@@ -78,7 +87,8 @@
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:cornerRadius="14dp" />
+                    app:cornerRadius="14dp"
+                    app:elevation="4dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

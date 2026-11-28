@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -16,55 +17,108 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="4dp"
             android:text="SOBRE NOSOTROS"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold" />
 
+        <!-- Línea decorativa celeste -->
+        <View
+            android:layout_width="72dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="#60A5FA" />
+
         <!-- Tarjeta 1: Quiénes somos -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#FFFFFF"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lineHeight="30sp"
-                android:padding="20dp"
-                android:text="Lafosse Furniture es una empresa especializada en la comercialización de mobiliario para oficinas, instituciones educativas, auditorios y espacios corporativos. Ofrecemos productos modernos, funcionales y de alta calidad para satisfacer las necesidades de nuestros clientes."
-                android:textColor="#1E293B"
-                android:textSize="24sp" />
+                android:background="@drawable/bg_card_modern"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="28dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#2563EB" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QUIÉNES SOMOS"
+                        android:textColor="#1E3A8A"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineHeight="30sp"
+                    android:text="Lafosse Furniture es una empresa especializada en la comercialización de mobiliario para oficinas, instituciones educativas, auditorios y espacios corporativos. Ofrecemos productos modernos, funcionales y de alta calidad para satisfacer las necesidades de nuestros clientes."
+                    android:textColor="#1E293B"
+                    android:textSize="24sp" />
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Tarjeta 2: Misión -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#FFFFFF"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_modern"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="MISIÓN"
-                    android:textColor="#1D4ED8"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="28dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#2563EB" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MISIÓN"
+                        android:textColor="#1E3A8A"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -81,24 +135,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_modern"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="VISIÓN"
-                    android:textColor="#1D4ED8"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="28dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#2563EB" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISIÓN"
+                        android:textColor="#1E3A8A"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
